@@ -1,27 +1,47 @@
 # Mecanum Robot Control System
 
-A comprehensive robotics project featuring a Mecanum wheel robot with advanced control capabilities, including IMU-based drift correction, line following, and web interface control.
+<div align="center">
+  <img src="https://img.shields.io/badge/Python-3.6%2B-blue" alt="Python Version">
+  <img src="https://img.shields.io/badge/License-MIT-green" alt="License">
+  <img src="https://img.shields.io/badge/Status-Active-brightgreen" alt="Status">
+</div>
+
+<div align="center">
+  <h3>🚀 A comprehensive robotics project featuring a Mecanum wheel robot with advanced control capabilities</h3>
+</div>
+
+## 📑 Table of Contents
+- [Features](#-features)
+- [Project Structure](#-project-structure)
+- [Documentation](#-documentation)
+- [System Components](#-system-components)
+- [Setup](#-setup)
+- [Usage](#-usage)
+- [Configuration](#-configuration)
+- [Contributing](#-contributing)
+- [License](#-license)
+- [Acknowledgments](#-acknowledgments)
 
 ## 🚀 Features
 
-- **Advanced Movement Control**
-  - Omnidirectional movement using Mecanum wheels
-  - IMU (MPU6050) integration for drift correction
-  - PID-based control system
-  - Web interface control
-  - Line following capabilities
+### Advanced Movement Control
+- Omnidirectional movement using Mecanum wheels
+- IMU (MPU6050) integration for drift correction
+- PID-based control system
+- Web interface control
+- Line following capabilities
 
-- **Control Interfaces**
-  - Web interface (Flask)
-  - Webcam streaming
-  - Custom command entry
+### Control Interfaces
+- Web interface (Flask)
+- Webcam streaming
+- Custom command entry
 
-- **Advanced Features**
-  - Drift correction using IMU
-  - Line following with IR sensors
-  - Multiple movement patterns
-  - Configurable speed and duration
-  - Real-time status feedback
+### Advanced Features
+- Drift correction using IMU
+- Line following with IR sensors
+- Multiple movement patterns
+- Configurable speed and duration
+- Real-time status feedback
 
 ## 📁 Project Structure
 
@@ -43,42 +63,42 @@ A comprehensive robotics project featuring a Mecanum wheel robot with advanced c
 └── README.MD             # This file
 ```
 
-## 📖 Documentation Links
+## 📖 Documentation
 
-- [Main Documentation](README.MD) - Overview of the Mecanum Robot Control System, including features, setup, and usage instructions
-- [Web Interfaces Documentation](web-interfaces/README.md) - Guide for web-based control and video streaming interfaces, including FFmpeg setup and troubleshooting
-- [Utilities Documentation](utils/README.md) - Guide for sensor and motor calibration utilities, including usage examples and configuration
-- [Line Following Documentation](line-following/README.md) - Documentation for line following implementation and configuration
-- [IMU Control Documentation](imu-control/README.md) - Guide for IMU-based control system and drift correction
-- [Basic Control Documentation](basic-control/README.md) - Documentation for basic robot control implementation
+### Quick Links
+- [Main Documentation](README.MD) - Overview of the Mecanum Robot Control System
+- [Web Interfaces Documentation](web-interfaces/README.md) - Guide for web-based control
+- [Utilities Documentation](utils/README.md) - Guide for sensor and motor calibration
+- [Line Following Documentation](line-following/README.md) - Line following implementation
+- [IMU Control Documentation](imu-control/README.md) - IMU-based control system
+- [Basic Control Documentation](basic-control/README.md) - Basic robot control
 
 ## 🔄 System Components
 
-1. **Web Interface Control System**
-   - Python: 
-     - `flask-controller.py`: Web-based UI with buttons for robot control
-     - `webcam-streamer.py`: FFmpeg-based webcam streaming functionality
-   - Features:
-     - Browser-based control interface
-     - Live video streaming
-     - Mobile-friendly control options
-     - Real-time command execution
+### 1. Web Interface Control System
+- **Python Components**:
+  - `flask-controller.py`: Web-based UI with buttons for robot control
+  - `webcam-streamer.py`: FFmpeg-based webcam streaming functionality
+- **Features**:
+  - Browser-based control interface
+  - Live video streaming
+  - Mobile-friendly control options
+  - Real-time command execution
 
-2. **Utility System**
-   - Python:
-     - `sensor_utils.py`: Sensor calibration and testing
-     - `motor_utils.py`: Motor testing and calibration
-     - `calibration_test.py`: Motor calibration utility
-   - Features:
-     - Sensor calibration tools
-     - Motor testing utilities
-     - Configuration helpers
-     - Diagnostic tools
+### 2. Utility System
+- **Python Components**:
+  - `sensor_utils.py`: Sensor calibration and testing
+  - `motor_utils.py`: Motor testing and calibration
+  - `calibration_test.py`: Motor calibration utility
+- **Features**:
+  - Sensor calibration tools
+  - Motor testing utilities
+  - Configuration helpers
+  - Diagnostic tools
 
 ## 🛠️ Setup
 
 ### Prerequisites
-
 - Python 3.6+
 - Arduino board with:
   - Two RMCS-2305 dual motor drivers
@@ -87,11 +107,10 @@ A comprehensive robotics project featuring a Mecanum wheel robot with advanced c
 - FFmpeg (for webcam streaming)
 
 ### Installation
-
 1. Clone the repository:
    ```bash
-   git clone [repository-url]
-   cd [repository-name]
+   git clone https://github.com/Shival-Gupta/mecanum-robot-control.git
+   cd mecanum-robot-control
    ```
 
 2. Install Python dependencies:
@@ -111,7 +130,6 @@ A comprehensive robotics project featuring a Mecanum wheel robot with advanced c
 ## 🎮 Usage
 
 ### Web Interface Control
-
 1. Start the Flask controller:
    ```bash
    python web-interfaces/flask-controller.py
@@ -127,7 +145,6 @@ A comprehensive robotics project featuring a Mecanum wheel robot with advanced c
    - Video stream: `http://<your-ip-address>:6000`
 
 ### Utility Tools
-
 1. Run motor calibration:
    ```bash
    python utils/calibration_test.py
@@ -145,40 +162,33 @@ A comprehensive robotics project featuring a Mecanum wheel robot with advanced c
 
 ## 🔧 Configuration
 
-- Adjust serial port settings in `flask-controller.py`:
-  ```python
-  SERIAL_PORT = "/dev/ttyACM0"  # Change to "COM3" on Windows
-  BAUD_RATE = 115200
-  ```
+### Serial Port Settings
+```python
+SERIAL_PORT = "/dev/ttyACM0"  # Change to "COM3" on Windows
+BAUD_RATE = 115200
+```
 
-- Configure webcam streaming in `webcam-streamer.py`:
-  ```python
-  port = 6000
-  device = '/dev/video0'  # Change as needed
-  framerate = '25'
-  video_size = '640x480'
-  ```
-
-## 📚 Documentation
-
-- `web-interfaces/README.md`: Web interface documentation
-- `utils/README.md`: Utility tools documentation
-- Each Python file contains detailed docstrings and comments
+### Webcam Streaming
+```python
+port = 6000
+device = '/dev/video0'  # Change as needed
+framerate = '25'
+video_size = '640x480'
+```
 
 ## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
+Contributions are welcome! Please feel free to submit a Pull Request. See our [Contributing Guidelines](CONTRIBUTING.md) for more details.
 
 ## 📝 License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 🙏 Acknowledgments
-
 - JetBot community for inspiration
 - Arduino community for hardware support
 - Python community for software tools
 
 ---
 
-Happy building and controlling your Mecanum robot! 🤖
+<div align="center">
+  <h3>Happy building and controlling your Mecanum robot! 🤖</h3>
+</div>
