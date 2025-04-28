@@ -148,4 +148,4 @@ if __name__ == "__main__":
     print("Starting Flask web server...")
     print("Access the control panel at http://localhost:5000")
     print("Press Ctrl+C to stop the server")
-    app.run(host='0.0.0.0', port=5000) 
+    app.run(host='0.0.0.0', port=6500) 
